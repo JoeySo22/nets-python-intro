@@ -22,14 +22,31 @@ else:
         sys.exit(-1)
 
 
+    # Contain the word counting in a dictionary.
     word_dictionary = {}
+    # Iterate through the input file until there are no more lines.
     while True:
+
+        
+        # Read each line to digest.
         line = input_file.readline()
+        '''
+        An empty string will tell us when readline() has reached the EOF.
+        If the text document as a vertical spacing by paragraph seperation
+        then there is a new-line character. Therefore, the empty string IS the 
+        EOF.
+        '''
         if (len(line) == 0):
             break
+        # Make line into all lowercase
         line = line.lower()
+        # Substitute all non-alphabet characters into empty strings
         line = re.sub('[^ a-z]', '', line)
+        # Seperate all strings by whitespace
         word_vector = line.split()
+
+        
+        # 
         for word in word_vector:
             if word in word_dictionary:
                 word_dictionary[word] += 1
