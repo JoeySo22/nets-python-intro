@@ -78,11 +78,11 @@ while True: # Done by 2830
         max_value = 0
         for key in word_dictionary:
             if word_dictionary[key] > max_value:
-                print('>>Maxkey=%s\tMaxvalue=%d' % (key, word_dictionary[key]))
+                #print('>>Maxkey=%s\tMaxvalue=%d' % (key, word_dictionary[key]))
                 max_key = key
                 max_value = word_dictionary[key]
         output_file.write('%s\t\t%d\n' % (max_key, max_value))
-        print('>>inputting %s \t\t %d' % (max_key, max_value))
+        #print('>>inputting %s \t\t %d' % (max_key, max_value))
         word_dictionary.pop(max_key)
     else:
         print('> Finished dictionary.')
